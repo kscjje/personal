@@ -37,15 +37,21 @@ springdoc:
   paths-to-match:
     - /api/**
 
-# Logging Config
-
+# Logback Config
 logging:
   file:
-    path: c:/tmp/
     name: restapi
+    schedule_name: restScheduling
   level:
     root: off
-    default_level: debug
+    default_level: info
+    pretty: off
+    org.zalando.logbook: off
+    schedule_level: off
+    com.custom: debug
+    jdbc:
+      default: ERROR
+      sqlonly: OFF
   logback:
     rollingpolicy:
       max-history: 1
@@ -57,10 +63,10 @@ Globals:
   maria:
 #    DriverClassName: org.mariadb.jdbc.Driver
     DriverClassName: net.sf.log4jdbc.DriverSpy
-#    Url: jdbc:mariadb://211.240.5.143:3306/hisco
-    Url: jdbc:log4jdbc:mariadb://211.240.5.143:3306/hisco
-    UserName: hisco
-    Password: hisco
+#    Url: jdbc:mariadb://localhost:3306/custom
+    Url: jdbc:log4jdbc:mariadb://localhost:3306/custom
+    UserName: custom
+    Password: 220617
   page:
     pageUnit: 10
     pageSize: 10

@@ -22,7 +22,7 @@ Globals:
   maria:
 #    DriverClassName: org.mariadb.jdbc.Driver
     DriverClassName: net.sf.log4jdbc.DriverSpy
-#    Url: jdbc:mariadb://211.240.5.143:3306/hisco
-    Url: jdbc:log4jdbc:mariadb://211.240.5.143:3306/hisco
-    UserName: hisco
-    Password: hisco
+#    Url: jdbc:mariadb://localhost:3306/custom
+    Url: jdbc:log4jdbc:mariadb://localhost:3306/custom
+    UserName: custom
+    Password: 220617

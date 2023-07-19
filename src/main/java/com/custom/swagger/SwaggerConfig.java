@@ -399,62 +399,6 @@ public class SwaggerConfig {
                 .build();
     }
 
-    /****************************************************************************************************
-     * 4. 시설내 중계 서버 REST API 정의서
-     ****************************************************************************************************/
-    @Bean
-    public GroupedOpenApi relayAllGroup() {
-        String groupName = "4. SPOWISE 시설 중계 서버 - 00. 전체";
-        String packageList[] = {
-                "com.custom.v1.controllers.relay"
-            };
-
-        return GroupedOpenApi.builder()
-                .group(groupName)
-                .packagesToScan(packageList)
-                .build();
-    }
-
-    @Bean
-    public GroupedOpenApi relayFace() {
-        String groupName = "4. SPOWISE 시설 중계 서버 - 01. 안면인식 시스템 중계";
-        String packageList[] = {
-            "com.custom.v1.controllers.relay.face"
-        };
-
-        return GroupedOpenApi.builder()
-                .group(groupName)
-                .packagesToScan(packageList)
-                .build();
-    }
-
-    @Bean
-    public GroupedOpenApi relayElectronKey() {
-        String groupName = "4. SPOWISE 시설 중계 서버 - 02. 전자키(락커) 시스템 중계";
-        String packageList[] = {
-            "com.custom.v1.controllers.relay.elkey"
-        };
-
-        return GroupedOpenApi.builder()
-                .group(groupName)
-                .packagesToScan(packageList)
-                .build();
-    }
-
-    @Bean
-    public GroupedOpenApi relayParking() {
-        String groupName = "4. SPOWISE 시설 중계 서버 - 03. 주차 시스템 중계";
-        String packageList[] = {
-            "com.custom.v1.controllers.relay.prkng"
-        };
-
-        return GroupedOpenApi.builder()
-                .group(groupName)
-                .packagesToScan(packageList)
-                .build();
-    }
-
-
 /**
     @Bean
     public SpringDocConfiguration springDocConfiguration(){

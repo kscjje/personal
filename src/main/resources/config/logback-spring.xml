@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <configuration>
 
     <springProperty name="ROOT_PATH" scope="context" source="logging.file.path" defaultValue="/logs"/>
     <springProperty name="LOG_FILENAME" scope="context" source="logging.file.name" defaultValue="log"/>
+
     <springProperty name="LEVEL_ROOT" scope="context" source="logging.level.root" defaultValue="off"/>
     <springProperty name="LEVEL_DEFAULT" scope="context" source="logging.level.default_level" defaultValue="info"/>
+
     <springProperty name="LOG_PATTERN" scope="context" source="logging.pattern" defaultValue="%d{HH:mm:ss.SSS} [%thread] [%-5level] [%logger{36}] - %msg %n"/>
+
     <springProperty name="FILE_HISTORY" scope="context" source="logging.logback.rollingpolicy.max-history" defaultValue="1"/>
     <springProperty name="FILE_SIZE" scope="context" source="logging.logback.rollingpolicy.max-file-size" defaultValue="1GB"/>
+
+    <springProperty name="SCHDUL_FILENAME" scope="context" source="logging.file.schedule_name" defaultValue="schdul"/>
+    <springProperty name="SCHDUL_LEVEL" scope="context" source="logging.level.schedule_level" defaultValue="off"/>
+
+    <springProperty name="LEVEL_HTTP" scope="context" source="logging.level.org.zalando.logbook" defaultValue="off"/>
+    <springProperty name="LEVEL_PRETTY" scope="context" source="logging.level.pretty" defaultValue="off"/>
+    <springProperty name="LEVEL_JDBC" scope="context" source="logging.level.jdbc.default" defaultValue="off"/>
+
 
     <appender name="CONSOL" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -29,12 +41,62 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="SchedulerFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ROOT_PATH}/${SCHDUL_FILENAME}.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ROOT_PATH}/${SCHDUL_FILENAME}.%d{yyyyMMdd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${FILE_SIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${FILE_HISTORY}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="PrettyLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ROOT_PATH}/PrettyLog.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ROOT_PATH}/PrettyLog.%d{yyyyMMdd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${FILE_SIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${FILE_HISTORY}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="httpExecuteInfoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ROOT_PATH}/HttpExecuteInfo.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ROOT_PATH}/HttpExecuteInfo.%d{yyyyMMdd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${FILE_SIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${FILE_HISTORY}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
     <logger name="java.sql" level="${LEVEL_DEFAULT}" />
-    <logger name="egovframework" level="${LEVEL_DEFAULT}" />
-    <logger name="com.custom" level="${LEVEL_DEFAULT}" />
-    <logger name="org.egovframe" level="${LEVEL_DEFAULT}" />
-    <logger name="jdbc.sqltiming" level="${LEVEL_DEFAULT}" />
-    <logger name="org.springframework" level="${LEVEL_DEFAULT}" />
+    <logger name="jdbc" level="${LEVEL_JDBC}" />
+
+    <logger name="com.custom.v3.fmcs.schdul" level="${SCHDUL_LEVEL}" additivity="false">
+        <appender-ref ref="SchedulerFile" />
+    </logger>
+
+    <logger name="com.custom.utl.PrettyLog" level="${LEVEL_PRETTY}" additivity="false">
+        <appender-ref ref="PrettyLogFile" />
+    </logger>
+
+    <logger name="org.zalando.logbook.Logbook" level="${LEVEL_HTTP}" additivity="false">
+        <appender-ref ref="httpExecuteInfoFile" />
+    </logger>
 
     <root level="${LEVEL_ROOT}">
         <appender-ref ref="FILE" />

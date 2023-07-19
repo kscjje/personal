@@ -77,7 +77,7 @@ public class EgovConfigAppDatasource {
 
         /**
         className = "net.sf.log4jdbc.DriverSpy";
-        url = "jdbc:log4jdbc:mariadb://211.240.5.143:3306/egovDB";
+        url = "jdbc:log4jdbc:mariadb://localhost:3306/egovDB";
         userName = "egov";
         password = "egov";
         */

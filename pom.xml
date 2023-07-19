@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.custom</groupId>
-    <artifactId>rest-api-server</artifactId>
+    <artifactId>custom-total-server</artifactId>
     <version>1.0</version>
     <name>CUSTOM_TOTAL_Server</name>
     <description>Custom Total Server</description>
@@ -88,6 +88,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -198,6 +199,16 @@
             <version>5.2.4.Final</version>
         </dependency>
         <!-- ECT Setting End -->
+        <dependency>
+        	<groupId>org.apache.tomcat.embed</groupId>
+        	<artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <!-- jstl 라이브러리 --> 
+	    <dependency> 
+	        <groupId>javax.servlet</groupId> 
+	        <artifactId>jstl</artifactId> 
+		</dependency>
+		        
     </dependencies>
 
     <build>
