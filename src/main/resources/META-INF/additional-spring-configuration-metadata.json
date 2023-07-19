@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "Globals.DbType",
+    "type": "java.lang.String",
+    "description": "Egovframwork Database Type"
+  },
+  {
+    "name": "Globals.maria",
+    "type": "java.util.Map<String, Integer>",
+    "description": "MariaDB Database configuration"
+  },
+  {
+    "name": "Globals.maria.DriverClassName",
+    "type": "java.lang.String",
+    "description": "MaraiDB Database Driver Class Name"
+  },
+  {
+    "name": "springdoc.version",
+    "type": "java.lang.String",
+    "description": "Swagger Springdoc Version info"
+  },
+  {
+    "name": "logging.level.default_level",
+    "type": "java.lang.String",
+    "description": "Logback Default log level"
+  },
+  {
+    "name": "Globals.page.page-unit",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.page.page-unit'"
+  },
+  {
+    "name": "Globals.page.pageSize",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.page.pageSize'"
+  },
+  {
+    "name": "Globals.page.paging",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.page.paging'"
+  }
+]}

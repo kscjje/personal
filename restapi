@@ -1,0 +1,17 @@
+2023-07-19 23:16:13.156  INFO 14020 --- [restartedMain] c.c.boot.CustomRestapiServerApplication  : Starting CustomRestapiServerApplication using Java 17.0.7 on DESKTOP-JDCA0K5 with PID 14020 (C:\personalapp\workspace\rest_api\target\classes started by kscjje in C:\personalapp\workspace\rest_api)
+2023-07-19 23:16:13.158  INFO 14020 --- [restartedMain] c.c.boot.CustomRestapiServerApplication  : The following profiles are active: local
+2023-07-19 23:16:13.187  INFO 14020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-19 23:16:13.187  INFO 14020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-19 23:16:14.111  INFO 14020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-07-19 23:16:14.116  INFO 14020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-19 23:16:14.116  INFO 14020 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-07-19 23:16:14.155  INFO 14020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-19 23:16:14.155  INFO 14020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 967 ms
+2023-07-19 23:16:14.296  INFO 14020 --- [restartedMain] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2023-07-19 23:16:14.974  INFO 14020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-19 23:16:15.011  INFO 14020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-07-19 23:16:15.019  INFO 14020 --- [restartedMain] c.c.boot.CustomRestapiServerApplication  : Started CustomRestapiServerApplication in 2.113 seconds (JVM running for 2.53)
+2023-07-19 23:16:19.447  INFO 14020 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-19 23:16:19.448  INFO 14020 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-19 23:16:19.448  INFO 14020 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-07-19 23:17:10.092  INFO 14020 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.

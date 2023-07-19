@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty name="ROOT_PATH" scope="context" source="logging.file.path" defaultValue="/logs"/>
+    <springProperty name="LOG_FILENAME" scope="context" source="logging.file.name" defaultValue="log"/>
+    <springProperty name="LEVEL_ROOT" scope="context" source="logging.level.root" defaultValue="off"/>
+    <springProperty name="LEVEL_DEFAULT" scope="context" source="logging.level.default_level" defaultValue="info"/>
+    <springProperty name="LOG_PATTERN" scope="context" source="logging.pattern" defaultValue="%d{HH:mm:ss.SSS} [%thread] [%-5level] [%logger{36}] - %msg %n"/>
+    <springProperty name="FILE_HISTORY" scope="context" source="logging.logback.rollingpolicy.max-history" defaultValue="1"/>
+    <springProperty name="FILE_SIZE" scope="context" source="logging.logback.rollingpolicy.max-file-size" defaultValue="1GB"/>
+
+    <appender name="CONSOL" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ROOT_PATH}/${LOG_FILENAME}.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ROOT_PATH}/${LOG_FILENAME}.%d{yyyyMMdd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${FILE_SIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${FILE_HISTORY}</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="java.sql" level="${LEVEL_DEFAULT}" />
+    <logger name="egovframework" level="${LEVEL_DEFAULT}" />
+    <logger name="com.custom" level="${LEVEL_DEFAULT}" />
+    <logger name="org.egovframe" level="${LEVEL_DEFAULT}" />
+    <logger name="jdbc.sqltiming" level="${LEVEL_DEFAULT}" />
+    <logger name="org.springframework" level="${LEVEL_DEFAULT}" />
+
+    <root level="${LEVEL_ROOT}">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOL" />
+    </root>
+
+</configuration>

@@ -1,0 +1,67 @@
+# Default Profiles Setting
+
+# Spring Boot Config
+spring:
+  profiles:
+    active: local
+  output:
+    ansi:
+      enabled: always
+
+# Server Config
+server:
+  port: 8090
+  servlet: 
+    context-path: /
+
+# Swagger Config
+springdoc:
+  version: v0.0.1
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  api-docs:
+#    enabled: false
+    enabled: true
+#    groups:
+#      enabled: true
+  swagger-ui:
+    path: restapi-doc
+    enabled: true
+#    enabled: false
+#    url: /v3/api-docs/restapi.json
+    operations-sorter: alpha
+    tags-sorter: alpha
+    disable-swagger-default-url: true
+    doc-expansion: none
+  writer-with-order-by-keys: true
+  paths-to-match:
+    - /api/**
+
+# Logging Config
+
+logging:
+  file:
+    path: c:/tmp/
+    name: restapi
+  level:
+    root: off
+    default_level: debug
+  logback:
+    rollingpolicy:
+      max-history: 1
+      max-file-size: 1GB
+
+# MariaDB Config
+Globals:
+  DbType: maria
+  maria:
+#    DriverClassName: org.mariadb.jdbc.Driver
+    DriverClassName: net.sf.log4jdbc.DriverSpy
+#    Url: jdbc:mariadb://211.240.5.143:3306/hisco
+    Url: jdbc:log4jdbc:mariadb://211.240.5.143:3306/hisco
+    UserName: hisco
+    Password: hisco
+  page:
+    pageUnit: 10
+    pageSize: 10
+    paging: false
