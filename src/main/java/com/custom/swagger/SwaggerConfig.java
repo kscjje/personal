@@ -39,8 +39,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customRESTApi(@Value("${springdoc.version}") String springdocVersion) {
 
-        Info info = new Info().title("SPOWISE REST API 정의")
-                .description("SPOWISE REST API 명세서 입니다.")
+        Info info = new Info().title("REST API 정의")
+                .description("REST API 명세서 입니다.")
                 .version(springdocVersion);
 
 
@@ -68,7 +68,7 @@ public class SwaggerConfig {
     @Bean
     public GroupedOpenApi customAllGroup() {
         return GroupedOpenApi.builder()
-                .group("0. SPOWISE 서비스 - 전체 서비스")
+                .group("0. 서비스 - 전체 서비스")
                 .pathsToMatch("/api/v1/**")
 //                .addOpenApiCustomiser(sortSchemasAlphabetically())
                 .build();
@@ -79,7 +79,7 @@ public class SwaggerConfig {
      ****************************************************************************************************/
     @Bean
     public GroupedOpenApi fmcsAllGroup() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 00. 전체";
+        String groupName = "1. 운영관리 시스템 - 00. 전체";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs"
             };
@@ -93,7 +93,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupCmmn() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 01. 공통";
+        String groupName = "1. 운영관리 시스템 - 01. 공통";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.cmmn"
                 , "com.custom.v1.controllers.fmcs.main"
@@ -109,7 +109,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupMember() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 02. 회원 관리";
+        String groupName = "1. 운영관리 시스템 - 02. 회원 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.mber"
             };
@@ -123,7 +123,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupLecture() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 03. 강좌 관리";
+        String groupName = "1. 운영관리 시스템 - 03. 강좌 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.lctr"
             };
@@ -137,7 +137,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupLocker() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 04. 사물함 관리";
+        String groupName = "1. 운영관리 시스템 - 04. 사물함 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.lckr"
             };
@@ -151,7 +151,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupErnt() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 05. 대관 관리";
+        String groupName = "1. 운영관리 시스템 - 05. 대관 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.rntl"
             };
@@ -165,7 +165,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupCmg() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 06. 입장 관리";
+        String groupName = "1. 운영관리 시스템 - 06. 입장 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.cmg"
             };
@@ -179,7 +179,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupTicket() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 07. 매표 관리";
+        String groupName = "1. 운영관리 시스템 - 07. 매표 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.tckt"
             };
@@ -193,7 +193,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupIncome() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 08. 수입 정산 관리";
+        String groupName = "1. 운영관리 시스템 - 08. 수입 정산 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.incm"
             };
@@ -207,7 +207,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupStatistics() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 09. 분석 통계";
+        String groupName = "1. 운영관리 시스템 - 09. 분석 통계";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.stats"
             };
@@ -221,7 +221,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupOperation() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 10. 운영 설정 관리";
+        String groupName = "1. 운영관리 시스템 - 10. 운영 설정 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.oper"
             };
@@ -235,7 +235,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupSystem() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 11. 시스템 관리";
+        String groupName = "1. 운영관리 시스템 - 11. 시스템 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.sys"
             };
@@ -249,7 +249,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi groupContents() {
-        String groupName = "1. SPOWISE 운영관리 시스템 - 12. 컨텐츠 관리";
+        String groupName = "1. 운영관리 시스템 - 12. 컨텐츠 관리";
         String packageList[] = {
                 "com.custom.v1.controllers.fmcs.cms"
             };
@@ -266,7 +266,7 @@ public class SwaggerConfig {
      ****************************************************************************************************/
     @Bean
     public GroupedOpenApi frontAllGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 00. 전체";
+        String groupName = "2. 통합예약 시스템 - 00. 전체";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt"
             };
@@ -279,7 +279,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi frontCommonGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 01. 공통";
+        String groupName = "2. 통합예약 시스템 - 01. 공통";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt.cmmn",
                 "com.custom.v1.controllers.frnt.mber"
@@ -293,7 +293,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi frontReservationGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 02. 통합예약";
+        String groupName = "2. 통합예약 시스템 - 02. 통합예약";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt.rsv"
             };
@@ -306,7 +306,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi frontGuideGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 03. 시설 안내";
+        String groupName = "2. 통합예약 시스템 - 03. 시설 안내";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt.guid"
             };
@@ -319,7 +319,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi frontCommunicationGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 04. 정보마당";
+        String groupName = "2. 통합예약 시스템 - 04. 정보마당";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt.info"
             };
@@ -332,7 +332,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi frontMyPageGroup() {
-        String groupName = "2. SPOWISE 통합예약 시스템 - 05. 마이페이지";
+        String groupName = "2. 통합예약 시스템 - 05. 마이페이지";
         String packageList[] = {
                 "com.custom.v1.controllers.frnt.mypg"
             };
@@ -348,7 +348,7 @@ public class SwaggerConfig {
      ****************************************************************************************************/
     @Bean
     public GroupedOpenApi setupAllGroup() {
-        String groupName = "3. SPOWISE 설정관리 시스템 - 00. 전체";
+        String groupName = "3. 설정관리 시스템 - 00. 전체";
         String packageList[] = {
                 "com.custom.v1.controllers.setup"
             };
@@ -361,7 +361,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi setupCommon() {
-        String groupName = "3. SPOWISE 설정관리 시스템 - 01. 공통기능";
+        String groupName = "3. 설정관리 시스템 - 01. 공통기능";
         String packageList[] = {
             "com.custom.v1.controllers.setup.cmmn"
           , "com.custom.v1.controllers.setup.main"
@@ -375,7 +375,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi setupPrduct() {
-        String groupName = "3. SPOWISE 설정관리 시스템 - 02. 서비스 계약 설정";
+        String groupName = "3. 설정관리 시스템 - 02. 서비스 계약 설정";
         String packageList[] = {
             "com.custom.v1.controllers.setup.svc"
         };
@@ -388,7 +388,7 @@ public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi setupSystem() {
-        String groupName = "3. SPOWISE 설정관리 시스템 - 03. 시스템 관리";
+        String groupName = "3. 설정관리 시스템 - 03. 시스템 관리";
         String packageList[] = {
             "com.custom.v1.controllers.setup.sys"
         };

@@ -86,18 +86,6 @@
     <logger name="java.sql" level="${LEVEL_DEFAULT}" />
     <logger name="jdbc" level="${LEVEL_JDBC}" />
 
-    <logger name="com.custom.v3.fmcs.schdul" level="${SCHDUL_LEVEL}" additivity="false">
-        <appender-ref ref="SchedulerFile" />
-    </logger>
-
-    <logger name="com.custom.utl.PrettyLog" level="${LEVEL_PRETTY}" additivity="false">
-        <appender-ref ref="PrettyLogFile" />
-    </logger>
-
-    <logger name="org.zalando.logbook.Logbook" level="${LEVEL_HTTP}" additivity="false">
-        <appender-ref ref="httpExecuteInfoFile" />
-    </logger>
-
     <root level="${LEVEL_ROOT}">
         <appender-ref ref="FILE" />
         <appender-ref ref="CONSOL" />

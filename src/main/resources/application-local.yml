@@ -34,8 +34,8 @@ Globals:
 #    DriverClassName: org.mariadb.jdbc.Driver
     DriverClassName: net.sf.log4jdbc.DriverSpy
 #    Url: jdbc:mariadb://localhost:3306/custom
-    Url: jdbc:log4jdbc:mariadb://localhost:3306/custom
-    UserName: custom
+    Url: jdbc:log4jdbc:mariadb://localhost:3306/custom?allowPublicKeyRetrieval=true&useSSL=false
+    UserName: root
     Password: 220617
 # Naver Cloud Config
 ncp:
