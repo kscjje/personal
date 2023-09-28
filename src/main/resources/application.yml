@@ -7,35 +7,11 @@ spring:
   output:
     ansi:
       enabled: always
-
 # Server Config
 server:
   port: 8090
   servlet: 
     context-path: /
-
-# Swagger Config
-springdoc:
-  version: v0.0.1
-  default-consumes-media-type: application/json
-  default-produces-media-type: application/json
-  api-docs:
-#    enabled: false
-    enabled: true
-#    groups:
-#      enabled: true
-  swagger-ui:
-    path: restapi-doc
-    enabled: true
-#    enabled: false
-#    url: /v3/api-docs/restapi.json
-    operations-sorter: alpha
-    tags-sorter: alpha
-    disable-swagger-default-url: true
-    doc-expansion: none
-  writer-with-order-by-keys: true
-  paths-to-match:
-    - /api/**
 
 # Logback Config
 logging:
@@ -44,14 +20,10 @@ logging:
     schedule_name: restScheduling
   level:
     root: off
-    default_level: info
-    pretty: off
-    org.zalando.logbook: off
-    schedule_level: off
     com.custom: debug
     jdbc:
       default: ERROR
-      sqlonly: OFF
+      sqlonly: INFO
   logback:
     rollingpolicy:
       max-history: 1
@@ -61,9 +33,7 @@ logging:
 Globals:
   DbType: maria
   maria:
-#    DriverClassName: org.mariadb.jdbc.Driver
     DriverClassName: net.sf.log4jdbc.DriverSpy
-#    Url: jdbc:mariadb://localhost:3306/custom
     Url: jdbc:log4jdbc:mariadb://localhost:3306/custom?allowPublicKeyRetrieval=true&useSSL=false
     UserName: root
     Password: 220617

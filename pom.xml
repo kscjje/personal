@@ -212,9 +212,12 @@
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
-		    <version>1.18.28</version>
 		    <scope>provided</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -235,6 +238,7 @@
                     <include>mybatis/**/*.xml</include>
                     <include>static/**/*</include>
                     <include>application.yml</include>
+                    <include>templates/**/*</include>
                     <include>application-${spring.profiles.active}.yml</include>
                     <include>META-INF/additional-spring-configuration-metadata.json</include>
                 </includes>

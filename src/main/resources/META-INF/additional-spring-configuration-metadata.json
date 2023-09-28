@@ -38,5 +38,25 @@
     "name": "Globals.page.paging",
     "type": "java.lang.String",
     "description": "A description for 'Globals.page.paging'"
+  },
+  {
+    "name": "Globals.maria.Url",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.maria.Url'"
+  },
+  {
+    "name": "Globals.page.paging",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.page.paging'"
+  },
+  {
+    "name": "Globals.Db-type",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.Db-type'"
+  },
+  {
+    "name": "Globals.Db-type",
+    "type": "java.lang.String",
+    "description": "A description for 'Globals.Db-type'"
   }
 ]}

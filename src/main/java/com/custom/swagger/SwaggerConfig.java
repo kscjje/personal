@@ -33,7 +33,7 @@ import io.swagger.v3.oas.models.info.Info;
  * </pre>
  */
 
-@Configuration
+//@Configuration
 public class SwaggerConfig {
 
     @Bean

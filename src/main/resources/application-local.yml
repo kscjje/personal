@@ -3,8 +3,13 @@ spring:
   config:
     activate:
       on-profile: local
-
-
+  thymeleaf:
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
 # Logback Config
 logging:
   file:
@@ -12,9 +17,9 @@ logging:
   level:
     root: warn
     default_level: info
-    pretty: debug
+    pretty: off
     org.zalando.logbook: off
-    schedule_level: debug
+    schedule_level: off
     com.custom: debug
     jdbc:
       default: ERROR
@@ -37,16 +42,3 @@ Globals:
     Url: jdbc:log4jdbc:mariadb://localhost:3306/custom?allowPublicKeyRetrieval=true&useSSL=false
     UserName: root
     Password: 220617
-# Naver Cloud Config
-ncp:
-  account:
-    accessKey: aa
-    secretKey: vv
-    apiKey: bb
-
-# JWT Default Expiration Config
-# Access Expires Hour, Refresh Expires Day
-jwt:
-  defaultAccessExpires: 1
-  defaultRefreshExpires: 30
-  secretKey: customKeyTag
