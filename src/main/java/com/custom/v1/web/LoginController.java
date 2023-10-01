@@ -54,7 +54,7 @@ public class LoginController {
 		MemberVO memberVO = new MemberVO();
 	
 		List<?> a = memberService.selectMemberList(memberVO);
-			
+		//
 		model.addAttribute("top", a);
 		return "test";
 	}
