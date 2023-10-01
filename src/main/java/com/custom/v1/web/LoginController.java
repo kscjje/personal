@@ -54,7 +54,7 @@ public class LoginController {
 		MemberVO memberVO = new MemberVO();
 	
 		List<?> a = memberService.selectMemberList(memberVO);
-		//젠킨스테스트  
+		//젠킨스테스트   
 		model.addAttribute("top", a);
 		return "test";
 	}
